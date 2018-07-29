@@ -1,0 +1,5 @@
+print "1. Add entry"
+print "2. Check entry"
+print "3. Delete entry"
+print "4. List entries"
+print "5. Exit"
