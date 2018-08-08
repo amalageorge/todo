@@ -17,25 +17,41 @@ def add_entry():
     entry = raw_input()
     entries.append(entry)
 
-count = len(entries)
-
 def delete_entry():
     print "Enter the element to be deleted"
-    to_delete = raw_input()
-    entries.remove(to_delete)
+    to_delete = int(raw_input())
+    del entries[to_delete]
+
+def list_entries():
+    for x in range(len(entries)):
+        print "Whether %d is done?" %(x+1)
+        flag = raw_input()
+        if flag == 'yes':
+            print "%r is done" %(x + 1)
+
+        else:
+            print "%r not done" %(x + 1)
+
+def to_print():
+    for i in range(len(entries)):
+        print "%d" %(i+1),entries[i]
 
 while input != '5':
 
     if input == '1':
         add_entry()
-        print (entries)
+        to_print()
+
+    elif input == '2':
+        list_entries()
+        to_print()
 
     elif input == '3':
         delete_entry()
-        print (entries)
+        to_print()
 
     elif input == '4':
-        print (entries)
+        to_print()
 
     input = prompt_user_input()
 
