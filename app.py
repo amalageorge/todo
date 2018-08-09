@@ -19,18 +19,22 @@ def add_entry():
 
 def delete_entry():
     print "Enter the element to be deleted"
-    to_delete = int(raw_input())
+    to_delete = int(raw_input()) -1
     del entries[to_delete]
 
-def list_entries():
-    for x in range(len(entries)):
-        print "Whether %d is done?" %(x+1)
+def check_entries():
+    y = 0
+    for x in entries:
+        print "Whether %s is done?" %(x)
         flag = raw_input()
         if flag == 'yes':
-            print "%r is done" %(x + 1)
-
+            new = "%s : done" %(x)
+            entries[y] = new
+            y +=1
         else:
-            print "%r not done" %(x + 1)
+            new = "%s : not done" %(x)
+            entries[y] = new
+            y += 1
 
 def to_print():
     for i in range(len(entries)):
@@ -43,7 +47,7 @@ while input != '5':
         to_print()
 
     elif input == '2':
-        list_entries()
+        check_entries()
         to_print()
 
     elif input == '3':
